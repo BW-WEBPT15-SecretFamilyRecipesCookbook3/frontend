@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-//import axios from 'axios';
-
-=======
 import React, { useState } from "react";
 // import './App.css';
->>>>>>> 53b7c9a9f001a59d64fa812273195cf4f9e9a61a
 
 function SignIn() {
 
@@ -72,15 +66,7 @@ function SignIn() {
         </label>
         <label>
           Username (Email):
-<<<<<<< HEAD
-          <input
-            type="text"
-            placeholder="Username/Email"
-            onChange={event => setSignIn(event.target.value)}
-          />
-=======
           <input type="text" onChange={event => setName(event.target.value)} />
->>>>>>> 53b7c9a9f001a59d64fa812273195cf4f9e9a61a
         </label>
       </form>
       <form>
