@@ -32,7 +32,7 @@ export const signUp = (credentials, history) => dispatch => {
       dispatch({ type: SIGN_UP_SUCCESS });
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
-        history.push("/");
+        history.push("/login");
       } else {
         credentials.history.push("/login");
       }
