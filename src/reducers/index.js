@@ -20,7 +20,7 @@ import {
   FETCH_TITLES_START,
   FETCH_TITLES_SUCCESS,
   FETCH_TITLES_FAILURE
-} from "../actions/index";
+} from "../actions";
 
 const initialState = {
   recipe: null,
