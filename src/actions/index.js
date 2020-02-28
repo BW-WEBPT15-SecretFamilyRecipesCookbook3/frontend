@@ -27,7 +27,7 @@ export const signUp = (credentials, history) => dispatch => {
   const creds = { email: credentials.email, password: credentials.password };
   dispatch({ type: SIGN_UP_START });
   axios
-    .post("https://sfrecipes.herokuapp.com/api/register", creds)
+    .post("https://sfrecipes.herokuapp.com/api/auth/register", creds)
     .then(res => {
       dispatch({ type: SIGN_UP_SUCCESS });
       if (res.data.token) {
