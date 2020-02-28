@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import './App.css';
-
 
 function SignIn() {
   const [name, setName] = useState("");
@@ -12,10 +11,10 @@ function SignIn() {
         <label>
           Username (Email):
           <input type="text" onChange={event => setName(event.target.value)} />
-         </label>
-         </form>
-         <form>
-         <label>
+        </label>
+      </form>
+      <form>
+        <label>
           Password:
           <input type="text" onChange={event => setName(event.target.value)} />
           <br></br>*Passwords are case sensitive*

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import {Route} from "react-dom"
 import "./App.css";
-import "./Login.js";
+import SignIn from "./components/login/Login";
 
 function App() {
   const [signIn, setSignIn] = useState("");
@@ -84,6 +84,7 @@ function App() {
           <br></br>*Passwords are case sensitive*
         </label>
       </form>
+      <SignIn />
     </div>
   );
 }
