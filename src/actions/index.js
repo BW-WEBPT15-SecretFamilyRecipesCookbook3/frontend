@@ -9,14 +9,14 @@ export const signUp = (credentials, history) => dispatch => {
   const creds = { email: credentials.email, password: credentials.password };
   dispatch({ type: SIGN_UP_START });
   axios
-    .post("https://backend/endpoint/register", creds)
+    .post("https://sfrecipes.herokuapp.com/api/auth/register", creds)
     .then(res => {
       dispatch({ type: SIGN_UP_SUCCESS });
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
         history.push("/");
       } else {
-        credentials.history.push("/log-in");
+        credentials.history.push("/login");
       }
       return true;
     })
@@ -31,7 +31,7 @@ export const signUp = (credentials, history) => dispatch => {
   export const logIn = (credentials, history) => dispatch => {
     dispatch({ type: LOG_IN_START });
     axios
-      .post("https://backend/endpoint/auth/login", credentials)
+      .post("https://sfrecipes.herokuapp.com/api/auth/login", credentials)
       .then(res => {
         dispatch({ type: LOG_IN_SUCCESS });
         localStorage.setItem("token", res.data.token);
