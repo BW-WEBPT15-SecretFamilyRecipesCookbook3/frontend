@@ -5,7 +5,6 @@ import "./App.css";
 import Login from "./components/login/Login.js";
 import Register from "./components/login/Register.js";
 
-
 function App() {
   return (
     <div className="App">
@@ -16,8 +15,8 @@ function App() {
       <Route exact path ='/login' component={Login}/>
       <Route exact path ='/register' component={Register}/>
       <Link className="button" to={'/'}> Home</Link>
-      <Link className="button2" to={'/login'}> Login</Link>
-      <Link className="button3" to={'/register'}> Register</Link>
+      <Link className="button" to={'/login'}> Login</Link>
+      <Link className="button" to={'/register'}> Register</Link>
       </Router>
     </div>
     
