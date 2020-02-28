@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 // import {Route} from "react-dom"
 import "./App.css";
-
-//COMPONENTS
 import SignIn from "./components/login/Login";
 
 function App() {
