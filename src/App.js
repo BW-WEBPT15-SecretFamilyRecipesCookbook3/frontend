@@ -1,10 +1,14 @@
 import React from "react";
 import "./App.css";
 import SignIn from "./components/login/Login";
+import Navibar from "./components/navbar/Navbar";
 
 function App() {
   return (
-    <SignIn />
+    <div>
+      <Navibar />
+      <SignIn />
+    </div>
   );
 }
 

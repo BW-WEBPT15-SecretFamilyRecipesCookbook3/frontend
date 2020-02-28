@@ -66,7 +66,7 @@ function SignIn() {
         </label>
         <label>
           Username (Email):
-          <input type="text" onChange={event => setName(event.target.value)} />
+          <input type="text" />
         </label>
       </form>
       <form>
