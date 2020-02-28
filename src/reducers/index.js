@@ -1,10 +1,15 @@
 import {
   SIGN_UP_START,
   SIGN_UP_SUCCESS,
-  SIGN_UP_FAILURE,
+  SIGN_UP_FAILURE
+} from "../actions/signUpAction";
+import {
   LOG_IN_START,
   LOG_IN_SUCCESS,
-  LOG_IN_FAILURE,
+  LOG_IN_FAILURE
+} from "../actions/logInAction";
+
+import {
   FETCH_RECIPE_START,
   FETCH_RECIPE_SUCCESS,
   FETCH_RECIPE_FAILURE,

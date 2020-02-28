@@ -14,7 +14,7 @@ import {
 // import Buttons from "./components/login/Buttons.js";
 
 import { connect } from "react-redux";
-import { signUp } from "../../actions";
+import { signUp } from "../../actions/signUpAction";
 
 class SignUpForm extends React.Component {
   state = {
