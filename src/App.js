@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./App.css";
+
 import Login from "./components/login/Login.js";
 import Register from "./components/login/Register.js";
 
@@ -12,14 +13,22 @@ function App() {
         <p>Secret Family Recipes Cookbook</p>
       </header>
       <Router>
-      <Route exact path ='/login' component={Login}/>
-      <Route exact path ='/register' component={Register}/>
-      <Link className="button" to={'/'}> Home</Link>
-      <Link className="button" to={'/login'}> Login</Link>
-      <Link className="button" to={'/register'}> Register</Link>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Link className="button" to={"/"}>
+          {" "}
+          Home
+        </Link>
+        <Link className="button2" to={"/login"}>
+          {" "}
+          Login
+        </Link>
+        <Link className="button3" to={"/register"}>
+          {" "}
+          Register
+        </Link>
       </Router>
     </div>
-    
   );
 }
 
