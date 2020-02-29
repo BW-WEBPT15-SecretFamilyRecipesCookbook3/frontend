@@ -2,12 +2,18 @@
     background: linear-gradient(to bottom, #0D0D0D, #312614);
 }
 
+.dash-top {
+    overflow: auto;
+}
+
 .dash-lower {
     display: flex;
+    overflow: auto;
 }
 
 .dash-aside {
     display: flex;
+    justify-self: center;
     width: 25%;
     height: 100vmin;
 }
@@ -15,4 +21,17 @@
 .dash-main {
     display: flex;
     width: 75%;
+    height: 100vmin;
+}
+
+@media(max-width: 630px) {
+    .dash-aside {
+        width: 40%;
+        overflow-x: auto;
+    }
+    .dash-main {
+        width: 60%;
+        height: 100vmin;
+        overflow: auto;
+    }
 }

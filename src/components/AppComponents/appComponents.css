@@ -8,19 +8,24 @@
     color: #A55A2E;
     border: 2px solid #F2BC1B;
     border-radius: 10px;
-    padding: .7rem 1.3rem;
-    width: 2.5%;
+    padding: .3rem;
 }
 
-.all-icon {
+.round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 1em;
     border: 2px solid #F2BC1B;
     border-radius: 50%;
-    padding: .5rem;
     background-color: peachpuff;
 }
 
 .box {
-    margin: .5em;
+    margin: .5rem;
+    color: #A55A2E;
 }
 
 .all-btn-wrap p {
@@ -37,6 +42,7 @@
     color: #A55A2E;
     border: .5px solid #D9A384;
     border-radius: 5px;
+    padding: .5rem 0;
     width: 100%;
     height: 3.5em;
 }
@@ -45,6 +51,35 @@
     font-size: 1.5em;
     padding: 0 1em;
 }
-.side-wrap .i {
-    margin-right: 2em;
+.side-wrap .round {
+    margin-right: 1em;
+}
+
+@media(max-width: 1000px) {
+    .side-wrap p {
+        font-size: 1rem;
+    }
+    .round {
+        margin: 2px;
+    }
+}
+@media(max-width: 770px) {
+    .side-wrap p {
+        font-size: small;
+    }
+}
+@media(max-width: 680px) {
+    .side-wrap p {
+        font-size: x-small;
+    }
+}
+
+@media(max-width: 630px) {
+    .side-wrap p {
+        display: none;
+    }
+    .side-wrap {
+        justify-content: center;
+        
+    }
 }

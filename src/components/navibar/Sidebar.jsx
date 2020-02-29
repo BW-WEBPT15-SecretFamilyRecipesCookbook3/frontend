@@ -7,13 +7,13 @@ import {
   FoodSide,
   AddSide
 } from "../AppComponents/AllBtn";
-// import Social from "./social";
+import Social from "./social";
 import "./navi.css";
 
 const Sidebar = () => {
   return (
     <aside className="aside">
-      {/* <Social /> */}
+      <Social />
       <ProfileSide />
       <SettingSide />
       <FamilySide />
