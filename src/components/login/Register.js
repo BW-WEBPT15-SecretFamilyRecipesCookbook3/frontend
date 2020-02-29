@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-// import { Route } from 'react-router-dom';
+
 import {
   Col,
   Row,
@@ -11,7 +11,6 @@ import {
   Input,
   FormText
 } from "reactstrap";
-// import Buttons from "./components/login/Buttons.js";
 
 import { connect } from "react-redux";
 import { signUp } from "../../actions/signUpAction";
@@ -57,52 +56,99 @@ class SignUpForm extends React.Component {
             <h2>Loading</h2>
           ) : (
             <>
-              <form className="signup-form" onSubmit={this.signUp}>
+              <Form className="signup-form" onSubmit={this.signUp}>
                 <div className="signup-form-header">
                   <div className="signup-logo-wrapper"></div>
                   <h3>Welcome to</h3>
                   <h2>Secret Cookbook</h2>
                 </div>
-                <p>Username (Email Address)</p>
-                <input
-                  type="email"
-                  required
-                  name="email"
-                  onChange={this.handleChanges}
-                  value={this.input}
-                />
-                <p>Create password</p>
-                <input
-                  type="password"
-                  required
-                  name="password1"
-                  onChange={this.handleChanges}
-                  value={this.input}
-                />
-                <p>Confirm password</p>
-                <input
-                  type="password"
-                  required
-                  name="password2"
-                  onChange={this.handleChanges}
-                  value={this.input}
-                />
-                {!this.state.passwordMatch ? (
-                  <p>Oops! Your passwords don't match</p>
-                ) : (
-                  ""
-                )}
+                {/* <Row form>
+                    <Col md={10}>
+                      <FormGroup className="fullname">
+                        <Label 
+                          for="firstname" 
+                          sm={10} 
+                          size="lg">First Name
+                        </Label>
+                        <Input 
+                        type="name" 
+                        name="name" 
+                        id="FirstName" 
+                        placeholder="First Name" />
+                        <Label 
+                          for="lastname" 
+                          sm={10} 
+                          size="lg">Last Name
+                        </Label>
+                        <Input
+                         type="name" 
+                         name="name" 
+                         id="LastName" 
+                         placeholder="Last Name" />
+                      </FormGroup>
+                    </Col>
+                  </Row> */}
+                <Row form>
+                  <Col md={10}>
+                    <FormGroup className="credentials">
+                      <p>Username (Email Address)</p>
+                      <Input
+                        type="email"
+                        required
+                        name="email"
+                        placeholder="Email Address"
+                        onChange={this.handleChanges}
+                        value={this.input}
+                      />
+
+                      <p>Create password</p>
+                      <Input
+                        type="password"
+                        required
+                        name="password1"
+                        placeholder="Create Password"
+                        onChange={this.handleChanges}
+                        value={this.input}
+                      />
+                      <p>Confirm password</p>
+                      <Input
+                        type="password"
+                        required
+                        name="password2"
+                        placeholder="Confirm Password"
+                        onChange={this.handleChanges}
+                        value={this.input}
+                      />
+                      {!this.state.passwordMatch ? (
+                        <p>Oops! Your passwords don't match</p>
+                      ) : (
+                        ""
+                      )}
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <FormText color="muted">
+                  <Label for="PasswordRequirements" sm={10} size="lg">
+                    *Passwords are case sensitive
+                    <p>Password recomendations:</p>
+                    <p>
+                      Include a mix of uppercase and lowercase letters and a
+                      number
+                    </p>
+                  </Label>
+                </FormText>
+
                 <br />
-                <button className="signup-btn" type="submit">
+                <Button className="signup-btn" type="submit">
                   Sign Up
-                </button>
+                </Button>
                 <p className="signup-small-font">
                   Already a member? Sign in{" "}
                   <Link to="/login" className="signup-link">
                     here
                   </Link>
                 </p>
-              </form>
+              </Form>
             </>
           )}
         </div>

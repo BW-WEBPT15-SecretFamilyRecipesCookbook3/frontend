@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #c46003;
 }
 
 .App-logo {
@@ -36,4 +37,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.links {
+  color: white;
+  font-size: 1.5em;
+  margin: 1%;
+  padding: 0% .5%;
+  border: 1px solid rgb(53, 26, 0);
+  border-radius: 10% 40%;
+}
+.links:hover{
+  background-color: rgb(53, 26, 0);
+  color: #c46003;
+  border-color: white;
 }
