@@ -5,7 +5,7 @@ import { logIn } from "../../actions/logInAction";
 import { withRouter } from "react-router";
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-class SignInForm extends React.Component {
+class Login extends React.Component {
   state = {
     credentials: {
       email: "",
@@ -88,4 +88,4 @@ const mapStateToProps = state => ({
   loggingIn: state.loggingIn,
   success: state.success
 });
-export default withRouter(connect(mapStateToProps, { logIn })(SignInForm));
+export default withRouter(connect(mapStateToProps, { logIn })(Login));

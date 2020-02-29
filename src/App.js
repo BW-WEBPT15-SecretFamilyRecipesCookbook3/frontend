@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.css";
 
-import Login from "./components/login/Login.js";
 import Register from "./components/login/Register.js";
+import RecipeCardDisplay from "./components/RecipeCardDisplay";
+import Login from "./components/login/Login.js";
 
 function App() {
   return (
@@ -12,21 +13,11 @@ function App() {
       <header className="App-header">
         <p>Secret Family Recipes Cookbook</p>
       </header>
+
       <Router>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Link className="button" to={"/"}>
-          {" "}
-          Home
-        </Link>
-        <Link className="button2" to={"/login"}>
-          {" "}
-          Login
-        </Link>
-        <Link className="button3" to={"/register"}>
-          {" "}
-          Register
-        </Link>
+        <Route exact path="/" component={RecipeCardDisplay} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </Router>
     </div>
   );
