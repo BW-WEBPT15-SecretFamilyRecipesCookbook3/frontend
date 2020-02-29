@@ -51,7 +51,7 @@ class Login extends React.Component {
                   <h2> Secret Cookbook</h2>
                 </div>
                 <Row>
-                  <Col md={7}>
+                  <Col md={20}>
                     <FormGroup className="login-credentials">
                       <p>Username(Email)</p>
                       <Input
@@ -74,7 +74,7 @@ class Login extends React.Component {
                     </FormGroup>
                   </Col>
                 </Row>
-                
+
                 <button className="login-btn" type="submit">
                   Log In
                 </button>

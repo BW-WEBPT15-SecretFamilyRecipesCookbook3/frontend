@@ -15,7 +15,6 @@ import {
 import { connect } from "react-redux";
 import { signUp } from "../../actions/signUpAction";
 
-
 class SignUpForm extends React.Component {
   state = {
     email: "",
@@ -63,7 +62,7 @@ class SignUpForm extends React.Component {
                   <h3>Welcome to</h3>
                   <h2>Secret Cookbook</h2>
                 </div>
-                <Row form>
+                {/* <Row form>
                     <Col md={10}>
                       <FormGroup className="fullname">
                         <Label 
@@ -88,53 +87,56 @@ class SignUpForm extends React.Component {
                          placeholder="Last Name" />
                       </FormGroup>
                     </Col>
-                  </Row>
+                  </Row> */}
                 <Row form>
-                <Col md={10}>
-                <FormGroup className="credentials">
-                <p>Username (Email Address)</p>
-                <Input
-                  type="email"
-                  required
-                  name="email"
-                  placeholder="Email Address"
-                  onChange={this.handleChanges}
-                  value={this.input}
-                />                
-               
-                <p>Create password</p>
-                <Input
-                  type="password"
-                  required
-                  name="password1"
-                  placeholder="Create Password"
-                  onChange={this.handleChanges}
-                  value={this.input}
-                />
-                <p>Confirm password</p>
-                <Input
-                  type="password"
-                  required
-                  name="password2"
-                  placeholder="Confirm Password"
-                  onChange={this.handleChanges}
-                  value={this.input}
-                />
-                {!this.state.passwordMatch ? (
-                  <p>Oops! Your passwords don't match</p>
-                ) : (
-                  ""
-                )} 
-                </FormGroup>
-                </Col>
+                  <Col md={10}>
+                    <FormGroup className="credentials">
+                      <p>Username (Email Address)</p>
+                      <Input
+                        type="email"
+                        required
+                        name="email"
+                        placeholder="Email Address"
+                        onChange={this.handleChanges}
+                        value={this.input}
+                      />
+
+                      <p>Create password</p>
+                      <Input
+                        type="password"
+                        required
+                        name="password1"
+                        placeholder="Create Password"
+                        onChange={this.handleChanges}
+                        value={this.input}
+                      />
+                      <p>Confirm password</p>
+                      <Input
+                        type="password"
+                        required
+                        name="password2"
+                        placeholder="Confirm Password"
+                        onChange={this.handleChanges}
+                        value={this.input}
+                      />
+                      {!this.state.passwordMatch ? (
+                        <p>Oops! Your passwords don't match</p>
+                      ) : (
+                        ""
+                      )}
+                    </FormGroup>
+                  </Col>
                 </Row>
                 <FormText color="muted">
-            <Label for="PasswordRequirements" sm={10} size="lg">*Passwords are case sensitive 
-           <p>Password recomendations:</p> 
-           <p>Include a mix of uppercase and lowercase letters and a number</p> 
-            </Label>
-            </FormText>
-
+                  <Label for="PasswordRequirements" sm={10} size="lg">
+                    *Passwords are case sensitive
+                    <p>Password recomendations:</p>
+                    <p>
+                      Include a mix of uppercase and lowercase letters and a
+                      number
+                    </p>
+                  </Label>
+                </FormText>
 
                 <br />
                 <Button className="signup-btn" type="submit">
@@ -149,7 +151,6 @@ class SignUpForm extends React.Component {
               </Form>
             </>
           )}
-
         </div>
       </div>
     );
