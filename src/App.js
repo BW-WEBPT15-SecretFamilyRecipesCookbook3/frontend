@@ -19,7 +19,7 @@ function App() {
       </header>
 
       <Router>
-        <Link className="links" to={"/"}>
+        <Link className="links" to={"/dashboard"}>
           {" "}
           Home
         </Link>
