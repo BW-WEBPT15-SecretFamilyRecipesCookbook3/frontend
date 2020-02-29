@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "../src/css/App.css";
 
 import Register from "./components/login/Register.js";
-import RecipeCardDisplay from "./components/RecipeCardDisplay";
+import RecipeCardDisplay from "./components/RecipeComponents/RecipeCardDisplay";
 import Login from "./components/login/Login.js";
 import Dashboard from "./components/dashboard/Dashboard";
 
