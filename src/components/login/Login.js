@@ -35,7 +35,7 @@ class Login extends React.Component {
 
   render() {
     if (localStorage.getItem("token")) {
-      return <Redirect to="/" />;
+      return <Redirect to="/dashboard" />;
     }
     return (
       <div className="login-page-wrapper">
