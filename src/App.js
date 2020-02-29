@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Code for Forms.</p>
+        <p>Secret Family Recipes Cookbook</p>
       </header>
       <Router>
         <Route exact path="/login" component={Login} />

@@ -1,28 +1,89 @@
-import React, { useState } from 'react';
+import React from "react";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { logIn } from "../../actions/logInAction";
+import { withRouter } from "react-router";
+import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
+class SignInForm extends React.Component {
+  state = {
+    credentials: {
+      email: "",
+      password: ""
+    }
+  };
 
-function Login() {
-  const [signIn, setSignIn] = useState("");
-  return (
-    <div className="App">
-        {console.log(signIn)}
-        <form>
-        <label><h1> Account Login</h1></label>
-          <label>
-            Username (Email):
-            <input type="text" placeholder="Username/Email" onChange={event => setSignIn(event.target.value)} />
-           </label>
-           </form>
-           <form>
-           <label>
-            Password:
-            <input type="text" placeholder="Password" onChange={event => setSignIn(event.target.value)} />
-            <br></br>*Passwords are case sensitive*
-          </label>
-        </form>
+  handleChanges = e => {
+    this.setState({
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
 
-      </div>
-    );
+  logIn = e => {
+    e.preventDefault();
+    this.props.logIn(this.state.credentials, this.props.history);
+    this.setState({
+      credentials: {
+        email: "",
+        password: ""
+      }
+    });
+  };
+
+  render() {
+    if (localStorage.getItem("token")) {
+      return (
+        <div className="login-page-wrapper">
+          <div className="login-form-wrapper">
+            {this.props.loggingIn ? (
+              <h2>Loading</h2>
+            ) : (
+              <>
+                <form className="login-form" onSubmit={this.logIn}>
+                  <div className="login-form-header">
+                    <div className="login-logo-wrapper"></div>
+                    <h3>Log in to</h3>
+                    <h2> Secret Cookbook</h2>
+                  </div>
+                  <p>Username(Email)</p>
+                  <input
+                    type="email"
+                    required
+                    name="email"
+                    onChange={this.handleChanges}
+                    value={this.input}
+                  />
+                  <p>Password</p>
+                  <input
+                    type="password"
+                    required
+                    name="password"
+                    onChange={this.handleChanges}
+                    value={this.input}
+                  />
+                  <button className="login-btn" type="submit">
+                    Log In
+                  </button>
+                  <p className="login-small-font">
+                    Not a member? Sign up{" "}
+                    <Link className="login-link" to="/sign-up">
+                      here
+                    </Link>
+                  </p>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      );
+    }
   }
-  
-  export default Login;
+}
+const mapStateToProps = state => ({
+  loggingIn: state.loggingIn,
+  success: state.success
+});
+export default withRouter(connect(mapStateToProps, { logIn })(SignInForm));
