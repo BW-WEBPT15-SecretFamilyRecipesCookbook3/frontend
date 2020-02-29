@@ -6,6 +6,7 @@ import "../src/css/App.css";
 import Register from "./components/login/Register.js";
 import RecipeCardDisplay from "./components/RecipeCardDisplay";
 import Login from "./components/login/Login.js";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" component={RecipeCardDisplay} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/dashboard" component={Dashboard} />
       </Router>
     </div>
   );
