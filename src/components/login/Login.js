@@ -71,7 +71,7 @@ class SignInForm extends React.Component {
                 </button>
                 <p className="login-small-font">
                   Not a member? Sign up{" "}
-                  <Link className="login-link" to="/sign-up">
+                  <Link className="login-link" to="/register">
                     here
                   </Link>
                 </p>
