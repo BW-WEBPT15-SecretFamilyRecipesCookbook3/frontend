@@ -5,7 +5,7 @@ import { logIn } from "../../actions/logInAction";
 import { withRouter } from "react-router";
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-class SignInForm extends React.Component {
+class Login extends React.Component {
   state = {
     credentials: {
       email: "",
@@ -35,55 +35,57 @@ class SignInForm extends React.Component {
 
   render() {
     if (localStorage.getItem("token")) {
-      return (
-        <div className="login-page-wrapper">
-          <div className="login-form-wrapper">
-            {this.props.loggingIn ? (
-              <h2>Loading</h2>
-            ) : (
-              <>
-                <form className="login-form" onSubmit={this.logIn}>
-                  <div className="login-form-header">
-                    <div className="login-logo-wrapper"></div>
-                    <h3>Log in to</h3>
-                    <h2> Secret Cookbook</h2>
-                  </div>
-                  <p>Username(Email)</p>
-                  <input
-                    type="email"
-                    required
-                    name="email"
-                    onChange={this.handleChanges}
-                    value={this.input}
-                  />
-                  <p>Password</p>
-                  <input
-                    type="password"
-                    required
-                    name="password"
-                    onChange={this.handleChanges}
-                    value={this.input}
-                  />
-                  <button className="login-btn" type="submit">
-                    Log In
-                  </button>
-                  <p className="login-small-font">
-                    Not a member? Sign up{" "}
-                    <Link className="login-link" to="/sign-up">
-                      here
-                    </Link>
-                  </p>
-                </form>
-              </>
-            )}
-          </div>
-        </div>
-      );
+      return <Redirect to="/" />;
     }
+    return (
+      <div className="login-page-wrapper">
+        <div className="login-form-wrapper">
+          {this.props.loggingIn ? (
+            <h2>Loading</h2>
+          ) : (
+            <>
+              <form className="login-form" onSubmit={this.logIn}>
+                <div className="login-form-header">
+                  <div className="login-logo-wrapper"></div>
+                  <h3>Log in to</h3>
+                  <h2> Secret Cookbook</h2>
+                </div>
+                <p>Username(Email)</p>
+                <input
+                  type="email"
+                  required
+                  name="email"
+                  onChange={this.handleChanges}
+                  value={this.input}
+                />
+                <p>Password</p>
+                <input
+                  type="password"
+                  required
+                  name="password"
+                  onChange={this.handleChanges}
+                  value={this.input}
+                />
+                <button className="login-btn" type="submit">
+                  Log In
+                </button>
+                <p className="login-small-font">
+                  Not a member? Sign up{" "}
+                  <Link className="login-link" to="/register">
+                    here
+                  </Link>
+                </p>
+              </form>
+            </>
+          )}
+        </div>
+      </div>
+    );
   }
 }
+
 const mapStateToProps = state => ({
   loggingIn: state.loggingIn,
   success: state.success
 });
-export default withRouter(connect(mapStateToProps, { logIn })(SignInForm));
+export default withRouter(connect(mapStateToProps, { logIn })(Login));

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { axioswithAuth } from "../components/utilis/AxiosWithAuth";
 
 export const LOG_IN_START = "LOG_IN_START";
 export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
@@ -12,7 +11,7 @@ export const logIn = (credentials, history) => dispatch => {
     .then(res => {
       dispatch({ type: LOG_IN_SUCCESS });
       localStorage.setItem("token", res.data.token);
-      history.push("/dashboard");
+      history.push("/login");
       return true;
     })
     .catch(err => {
