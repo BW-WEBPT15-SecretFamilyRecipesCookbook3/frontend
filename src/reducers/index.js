@@ -8,24 +8,34 @@ import {
   LOG_IN_SUCCESS,
   LOG_IN_FAILURE
 } from "../actions/logInAction";
-
 import {
   FETCH_RECIPE_START,
   FETCH_RECIPE_SUCCESS,
-  FETCH_RECIPE_FAILURE,
+  FETCH_RECIPE_FAILURE
+} from "../actions/getRecipeAction";
+
+import {
   ADD_RECIPE_START,
   ADD_RECIPE_SUCCESS,
-  ADD_RECIPE_FAILURE,
+  ADD_RECIPE_FAILURE
+} from "../actions/addRecipeAction";
+
+import {
   UPDATE_RECIPE_START,
   UPDATE_RECIPE_SUCCESS,
-  UPDATE_RECIPE_FAILURE,
+  UPDATE_RECIPE_FAILURE
+} from "../actions/updateRecipeAction";
+
+import {
   DELETE_RECIPE_START,
   DELETE_RECIPE_SUCCESS,
-  DELETE_RECIPE_FAILURE,
+  DELETE_RECIPE_FAILURE
+} from "../actions/deleteRecipeAction";
+import {
   FETCH_TITLES_START,
   FETCH_TITLES_SUCCESS,
   FETCH_TITLES_FAILURE
-} from "../actions";
+} from "../actions/fetchTitleAction";
 
 const initialState = {
   recipe: null,
