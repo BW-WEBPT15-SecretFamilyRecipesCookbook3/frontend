@@ -1,5 +1,4 @@
 import axios from "axios";
-import { axioswithAuth } from "../components/utilis/AxiosWithAuth";
 
 export const LOG_IN_START = "LOG_IN_START";
 export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
