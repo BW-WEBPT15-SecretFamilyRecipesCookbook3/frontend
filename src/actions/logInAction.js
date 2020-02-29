@@ -12,7 +12,7 @@ export const logIn = (credentials, history) => dispatch => {
     .then(res => {
       dispatch({ type: LOG_IN_SUCCESS });
       localStorage.setItem("token", res.data.token);
-      history.push("/");
+      history.push("/login");
       return true;
     })
     .catch(err => {
