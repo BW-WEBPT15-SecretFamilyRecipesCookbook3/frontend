@@ -7,6 +7,7 @@ import Register from "./components/login/Register.js";
 import RecipeCardDisplay from "./components/RecipeComponents/RecipeCardDisplay";
 import Login from "./components/login/Login.js";
 import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/utilis/PrivateRoute";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route exact path="/" component={RecipeCardDisplay} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/dashboard" component={Dashboard} />
       </Router>
     </div>
   );
