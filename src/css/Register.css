@@ -1,0 +1,14 @@
+
+.signup-page-wrapper {
+  background-color: rgb(53, 26, 0);
+  color: #c46003;
+  display: flex;
+  justify-content: center;
+}
+
+.fullname, .credentials {
+    margin-left: 20%;
+  }
+  Label {
+    margin-bottom: 20%;
+  }
