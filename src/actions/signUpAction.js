@@ -4,9 +4,6 @@ import axiosWithAuth from "../components/utilis/AxiosWithAuth";
 export const SIGN_UP_START = "SIGN_UP_START";
 export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 export const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
-export const LOG_IN_START = "LOG_IN_START";
-export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
-export const LOG_IN_FAILURE = "LOG_IN_FAILURE";
 export const FETCH_RECIPE_START = "FETCH_RECIPE_START";
 export const FETCH_RECIPE_SUCCESS = "FETCH_RECIPE_SUCCESS";
 export const FETCH_RECIPE_FAILURE = "FETCH_RECIPE_FAILURE";
@@ -27,12 +24,12 @@ export const signUp = (credentials, history) => dispatch => {
   const creds = { email: credentials.email, password: credentials.password };
   dispatch({ type: SIGN_UP_START });
   axios
-    .post("api/auth/register", creds)
+    .post("https://sfrecipes.herokuapp.com/api/auth/register", creds)
     .then(res => {
       dispatch({ type: SIGN_UP_SUCCESS });
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
-        history.push("/");
+        history.push("/login");
       } else {
         credentials.history.push("/login");
       }
@@ -42,22 +39,6 @@ export const signUp = (credentials, history) => dispatch => {
       dispatch({ type: SIGN_UP_FAILURE, payload: err });
       return false;
     });
-
-  const logIn = (credentials, history) => dispatch => {
-    dispatch({ type: LOG_IN_START });
-    axios
-      .post("api/auth/login", credentials)
-      .then(res => {
-        dispatch({ type: LOG_IN_SUCCESS });
-        localStorage.setItem("token", res.data.token);
-        history.push("/");
-        return true;
-      })
-      .catch(err => {
-        dispatch({ type: LOG_IN_FAILURE, payload: err });
-        return false;
-      });
-  };
 
   const getRecipe = recipeID => dispatch => {
     dispatch({ type: FETCH_RECIPE_START });
