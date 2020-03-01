@@ -20,10 +20,11 @@ function App() {
       </header>
 
       <Router>
-        <Link className="links" to={"/dashboard"}>
+        <Link className="links" to={"/"}>
           {" "}
           Home
         </Link>
+
         <Link className="links" to={"/login"}>
           {" "}
           Login
@@ -32,8 +33,12 @@ function App() {
           {" "}
           Register
         </Link>
+        <Link className="links" to={"/dashboard"}>
+          {" "}
+          Dashboard
+        </Link>
 
-        <Route exact path="/" component={RecipeCardDisplay} />
+        <PrivateRoute exact path="/" component={RecipeCardDisplay} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
