@@ -195,7 +195,7 @@ class RecipeForm extends React.Component {
               value={this.state.directionValue}
               placeholder="Direction"
             />
-            <button onClick={this.addDirection}>Plus</button>
+            <button onClick={this.addDirection}>Add Direction</button>
             {this.state.directions.map((direction, index) => (
               <div className="direction">
                 <ShowArrayItem

@@ -10,6 +10,7 @@ import RecipeCardDisplay from "./components/RecipeComponents/RecipeCardDisplay";
 import Login from "./components/login/Login.js";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/utilis/PrivateRoute";
+import RecipeForm from "./components/RecipeComponents/RecipeForm";
 
 function App() {
   return (
@@ -31,10 +32,12 @@ function App() {
           {" "}
           Register
         </Link>
+
         <Route exact path="/" component={RecipeCardDisplay} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/recipeform" component={RecipeForm} />
       </Router>
     </div>
   );
