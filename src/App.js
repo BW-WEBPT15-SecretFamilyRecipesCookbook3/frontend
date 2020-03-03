@@ -11,7 +11,6 @@ import Login from "./components/login/Login.js";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/utilis/PrivateRoute";
 import RecipeForm from "./components/RecipeComponents/RecipeForm";
-import Navigation from "./components/Navigation";
 
 function App() {
   return (
@@ -21,7 +20,22 @@ function App() {
       </header>
 
       <Router>
-        <Navigation />
+        <a href="https://cookbookproject.netlify.com" className="links">
+          Home
+        </a>
+
+        <Link className="links" to={"/login"}>
+          {" "}
+          Login
+        </Link>
+        <Link className="links" to={"/register"}>
+          {" "}
+          Register
+        </Link>
+        <Link className="links" to={"/dashboard"}>
+          {" "}
+          Dashboard
+        </Link>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
