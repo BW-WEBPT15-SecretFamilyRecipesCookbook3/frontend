@@ -4,6 +4,17 @@ import { connect } from "react-redux";
 import { addRecipe } from "../../actions/addRecipeAction";
 import ShowArrayItem from "./ShowArrayItem";
 
+import {
+  Col,
+  Row,
+  // Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  // FormText
+} from "reactstrap";
+
 class RecipeForm extends React.Component {
   state = {
     title: "",
@@ -144,9 +155,18 @@ class RecipeForm extends React.Component {
   render() {
     return (
       <div className="recipe-form">
-        <h2>Create New Recipe</h2>
-        <form onSubmit={this.submitRecipe}>
-          <input
+        
+        <Form onSubmit={this.submitRecipe}>
+         <h2>Create New Recipe</h2>
+          <Row form>
+            <Col md={9}>
+            <FormGroup className="create-recipe">
+              {/* <Label 
+              for="Create-New-Recipe"
+              size="lg">Create New Recipe
+              </Label> */}
+            
+          <Input
             placeholder="Title"
             type="text"
             required
@@ -154,16 +174,19 @@ class RecipeForm extends React.Component {
             onChange={this.handleChanges}
             value={this.state.title}
           />
-          <input
+          <Input
             placeholder="Source"
             type="text"
             name="source"
             onChange={this.handleChanges}
             value={this.state.source}
           />
+            </FormGroup>
+           </Col>
+         </Row>
+
           <div className="ingredients-wrapper">
             <h3>Ingredients</h3>
-
             <input
               placeholder="Ingredient"
               type="text"
@@ -239,6 +262,7 @@ class RecipeForm extends React.Component {
               ))}
             </div>
           </div>
+          <div className="add-note">
           <h3>Note:</h3>
           <input
             type="text"
@@ -255,9 +279,12 @@ class RecipeForm extends React.Component {
               </button>
             </div>
           ))}
+          </div>
 
+          <div className="submit-recipe"> 
           <button type="submit">Add Recipe</button>
-        </form>
+          </div> 
+        </Form>
       </div>
     );
   }
