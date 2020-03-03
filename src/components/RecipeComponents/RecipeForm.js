@@ -11,7 +11,8 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
+  Button
   // FormText
 } from "reactstrap";
 
@@ -178,7 +179,7 @@ class RecipeForm extends React.Component {
               ))}
             </div>
           </div>
-          <button type="submit">Add Recipe</button>
+          <Button type="submit"> Add Recipe</Button>
         </Form>
       </div>
     );
