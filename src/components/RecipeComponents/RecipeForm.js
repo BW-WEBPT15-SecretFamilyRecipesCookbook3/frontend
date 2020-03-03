@@ -7,6 +7,7 @@ import ShowArrayItem from "./ShowArrayItem";
 class RecipeForm extends React.Component {
   state = {
     title: "",
+    description: "",
     source: "",
     ingredients: [],
     directions: [],
@@ -131,6 +132,7 @@ class RecipeForm extends React.Component {
     const fullNoteString = this.state.fullNote.join("||");
     const newRecipe = {
       title: this.state.title,
+      description: this.state.description,
       source: this.state.source,
       ingredients: this.state.ingredients,
       instructions: this.state.directions,
@@ -153,6 +155,14 @@ class RecipeForm extends React.Component {
             name="title"
             onChange={this.handleChanges}
             value={this.state.title}
+          />
+          <input
+            placeholder="Description"
+            type="text"
+            required
+            name="description"
+            onChange={this.handleChanges}
+            value={this.state.description}
           />
           <input
             placeholder="Source"
