@@ -90,7 +90,7 @@ class SignUpForm extends React.Component {
                   </Row> */}
                 <Row form>
                   <Col md={10}>
-                    <FormGroup className="credentials">
+                    <FormGroup className="credentials"> 
                       <p>Username (Email Address)</p>
                       <Input
                         type="email"
