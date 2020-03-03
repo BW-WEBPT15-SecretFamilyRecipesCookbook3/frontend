@@ -5,11 +5,9 @@ import "../src/css/App.css";
 import "../src/css/Register.css";
 import "../src/css/Login.css";
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "../src/css/Recipes.css";
-
-
 
 import Register from "./components/login/Register.js";
 import RecipeCardDisplay from "./components/RecipeComponents/RecipeCardDisplay";
@@ -22,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Secret Family Recipes Cookbook</p>
+        <p>Secret Family Recipes Cookbook2</p>
       </header>
 
       <Router>
