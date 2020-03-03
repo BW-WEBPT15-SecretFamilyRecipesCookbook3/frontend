@@ -21,10 +21,9 @@ function App() {
       </header>
 
       <Router>
-        <Link className="links" to={"/"}>
-          {" "}
+        <a href="https://cookbookproject.netlify.com" className="links">
           Home
-        </Link>
+        </a>
 
         <Link className="links" to={"/login"}>
           {" "}
@@ -38,10 +37,8 @@ function App() {
           {" "}
           Dashboard
         </Link>
-
-        <PrivateRoute exact path="/" component={RecipeCardDisplay} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/recipeform" component={RecipeForm} />
       </Router>
