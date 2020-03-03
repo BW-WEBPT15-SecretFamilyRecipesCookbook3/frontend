@@ -1,0 +1,68 @@
+
+.recipe-form {
+  background-color: rgb(53, 26, 0);
+  color: #c46003;
+  display: flex;
+  justify-content: center; 
+} 
+
+.recipe-form button {
+  background-color: #c46003;
+  color: rgb(53, 26, 0);
+}
+
+.create-recipe {
+  margin-left: 45%;
+  margin-right: 13%;
+  font-size: 2em;
+  justify-content: center;  
+
+}
+
+.ingredients-wrapper {
+  font-size: 1.5em;
+  margin-left: 5%;
+}
+  
+.directions-wrapper {
+  font-size: 1.53em;
+  margin-left: 5%;
+}
+
+.tags {
+  display: inline-block;
+  font-size: 1.5em;
+  margin: .5% 25% .5% 25%;
+}
+
+.tags button {
+  margin: 2%;
+  padding: .5%;
+  border-radius: 50%;
+}
+
+.ingredients-wrapper button, .directions-wrapper button {
+  margin: 1%;
+  font-size: .75em;
+  padding: 1%;
+  border-radius: 50%;
+}
+
+.add-note {
+  font-size: 1.5em; 
+  margin: 2% 0% 3% 0%;
+}
+
+.add-note button {
+  margin: 0% 1.5% 0% 1.5%;
+  border-radius: 50%;
+}
+
+.submit-recipe {
+  font-size: 2em; 
+  border-radius: 30%;
+}
+
+.submit-recipe button {
+  border-radius: 15%;
+}
