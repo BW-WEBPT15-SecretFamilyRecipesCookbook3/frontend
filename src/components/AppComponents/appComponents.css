@@ -21,6 +21,13 @@
     border: 2px solid #F2BC1B;
     border-radius: 50%;
     background-color: peachpuff;
+    transition: ease-in-out .1s;
+}
+
+.round:hover {
+    background-color: white;
+    border: 2px solid orangered;
+    transform: scale(1.2);
 }
 
 .box {
@@ -51,6 +58,7 @@
     font-size: 1.5em;
     padding: 0 1em;
 }
+
 .side-wrap .round {
     margin-right: 1em;
 }
@@ -59,15 +67,18 @@
     .side-wrap p {
         font-size: 1rem;
     }
+
     .round {
         margin: 2px;
     }
 }
+
 @media(max-width: 770px) {
     .side-wrap p {
         font-size: small;
     }
 }
+
 @media(max-width: 680px) {
     .side-wrap p {
         font-size: x-small;
@@ -78,8 +89,9 @@
     .side-wrap p {
         display: none;
     }
+
     .side-wrap {
         justify-content: center;
-        
+
     }
 }

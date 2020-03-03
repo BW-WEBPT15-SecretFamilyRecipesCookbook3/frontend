@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, Redirect } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import "../src/css/App.css";
 import "../src/css/Register.css";
@@ -13,9 +13,6 @@ import PrivateRoute from "./components/utilis/PrivateRoute";
 import RecipeForm from "./components/RecipeComponents/RecipeForm";
 
 function App() {
-  if (localStorage.getItem("token")) {
-    return <Redirect to="/dashboard" />;
-  }
   return (
     <div className="App">
       <header className="App-header">

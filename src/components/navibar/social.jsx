@@ -6,6 +6,7 @@ const Social = () => {
 
   const LogOut = () => {
     localStorage.setItem('token', "");
+    
     console.log('clicked');
   }
 
@@ -13,7 +14,9 @@ const Social = () => {
     <div className="social-wrap">
       <Twitter />
       <YouTube />
-      <Logout onClick={LogOut()}/>
+      <a href="https://cookbookproject.netlify.com/">
+        <Logout onClick={LogOut()}/>
+      </a>
     </div>
   );
 };
