@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Secret Family Recipes Cookbook2</p>
+        <p>Secret Family Recipes Cookbook</p>
       </header>
 
       <Router>
