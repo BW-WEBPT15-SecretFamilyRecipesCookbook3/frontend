@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import Sidebar from "../navibar/Sidebar";
 import Navibar from "../navibar/Navibar";
 import "./dash.css";

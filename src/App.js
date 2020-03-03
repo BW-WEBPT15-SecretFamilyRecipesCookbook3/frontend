@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route, Link, Redirect } from "react-router-dom";
 
 import "../src/css/App.css";
 import "../src/css/Register.css";
@@ -12,30 +12,18 @@ import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/utilis/PrivateRoute";
 
 function App() {
+  if (localStorage.getItem("token")) {
+    return <Redirect to="/dashboard" />;
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Secret Family Recipes Cookbook</p>
-      </header>
-
-      <Router>
-        <Link className="links" to={"/dashboard"}>
-          {" "}
-          Home
-        </Link>
-        <Link className="links" to={"/login"}>
-          {" "}
-          Login
-        </Link>
-        <Link className="links" to={"/register"}>
-          {" "}
-          Register
-        </Link>
-        <Route exact path="/" component={RecipeCardDisplay} />
+      
+      
+        <Route exact path="/" component={Login} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-      </Router>
+        <Route path="/dashboard" component={Dashboard} />
+
     </div>
   );
 }
