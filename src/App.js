@@ -37,15 +37,11 @@ function App() {
           {" "}
           Dashboard
         </Link>
-        <Link className="links" to={"/recipeform"}>
-          {" "}
-          Recipe From (temp link)
-        </Link>
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
-        <Route path="/recipeform" component={RecipeForm} />
+        <PrivateRoute path="/recipeform" component={RecipeForm} />
       </Router>
     </div>
   );
