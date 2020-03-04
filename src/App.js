@@ -38,7 +38,7 @@ function App() {
           {" "}
           Dashboard
         </Link>
-
+    
         <PrivateRoute exact path="/" component={RecipeCardDisplay} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
