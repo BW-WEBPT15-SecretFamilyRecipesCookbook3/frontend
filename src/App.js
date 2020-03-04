@@ -5,11 +5,9 @@ import "../src/css/App.css";
 import "../src/css/Register.css";
 import "../src/css/Login.css";
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "../src/css/Recipes.css";
-
-
 
 import Register from "./components/login/Register.js";
 import RecipeCardDisplay from "./components/RecipeComponents/RecipeCardDisplay";
@@ -45,7 +43,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/recipeform" component={RecipeForm} />
+        <Route path="/recipeform" component={RecipeForm} />
       </Router>
     </div>
   );
