@@ -12,7 +12,7 @@ export const addRecipe = (newRecipe, history) => dispatch => {
     .then(res => {
       dispatch({ type: ADD_RECIPE_SUCCESS, payload: res.data });
       const recipe_id = res.data[res.data.length - 1].id;
-      history.push(`/recipes/view/${recipe_id}`);
+      history.push(`/recipes/${recipe_id}`);
     })
     .catch(err => {
       dispatch({ type: ADD_RECIPE_FAILURE, payload: err });
