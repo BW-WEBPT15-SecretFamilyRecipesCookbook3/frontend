@@ -7,8 +7,6 @@ import "../src/css/Login.css";
 
 import "../src/css/Recipes.css";
 
-
-
 import Register from "./components/login/Register.js";
 import Login from "./components/login/Login.js";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -42,7 +40,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/recipeform" component={RecipeForm} />
+        <Route path="/recipeform" component={RecipeForm} />
       </Router>
     </div>
   );

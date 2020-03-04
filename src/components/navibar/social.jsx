@@ -3,7 +3,6 @@ import { Logout, YouTube, Twitter } from "../AppComponents/AllBtn";
 import "./navi.css";
 
 const Social = () => {
-
   const LogOut = () => {
     localStorage.removeItem('token', "");
     
@@ -15,7 +14,7 @@ const Social = () => {
       <Twitter />
       <YouTube />
       <a href="https://cookbookproject.netlify.com/">
-        <Logout onClick={LogOut()}/>
+        <Logout onClick={LogOut} />
       </a>
     </div>
   );
