@@ -43,7 +43,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/recipeform" component={RecipeForm} />
+        <Route path="/recipeform" component={RecipeForm} />
       </Router>
     </div>
   );
