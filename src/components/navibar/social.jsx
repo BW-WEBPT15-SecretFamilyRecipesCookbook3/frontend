@@ -5,7 +5,7 @@ import "./navi.css";
 const Social = () => {
 
   const LogOut = () => {
-    localStorage.setItem('token', "");
+    localStorage.removeItem('token', "");
     
     console.log('clicked');
   }

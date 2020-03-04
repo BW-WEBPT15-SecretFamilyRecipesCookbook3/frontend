@@ -5,14 +5,11 @@ import "../src/css/App.css";
 import "../src/css/Register.css";
 import "../src/css/Login.css";
 
-import { BrowserRouter as Router } from 'react-router-dom';
-
 import "../src/css/Recipes.css";
 
 
 
 import Register from "./components/login/Register.js";
-import RecipeCardDisplay from "./components/RecipeComponents/RecipeCardDisplay";
 import Login from "./components/login/Login.js";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/utilis/PrivateRoute";
