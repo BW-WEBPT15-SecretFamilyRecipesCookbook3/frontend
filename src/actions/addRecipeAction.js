@@ -8,7 +8,7 @@ export const ADD_RECIPE_FAILURE = "ADD_RECIPE_FAILURE";
 export const addRecipe = (newRecipe, history) => dispatch => {
   dispatch({ type: ADD_RECIPE_START });
   axiosWithAuth()
-    .post("https://sfrecipes.herokuapp.com/api/recipes", newRecipe)
+    .post("https://sfrecipes.herokuapp.com/api/recipes/", newRecipe)
     .then(res => {
       dispatch({ type: ADD_RECIPE_SUCCESS, payload: res.data });
       const recipe_id = res.data[res.data.length - 1].id;
