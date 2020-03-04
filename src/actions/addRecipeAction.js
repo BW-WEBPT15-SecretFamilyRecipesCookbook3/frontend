@@ -8,11 +8,11 @@ export const ADD_RECIPE_FAILURE = "ADD_RECIPE_FAILURE";
 export const addRecipe = (newRecipe, history) => dispatch => {
   dispatch({ type: ADD_RECIPE_START });
   axiosWithAuth()
-    .post("/recipes", newRecipe)
+    .post("https://sfrecipes.herokuapp.com/api/recipes", newRecipe)
     .then(res => {
       dispatch({ type: ADD_RECIPE_SUCCESS, payload: res.data });
       const recipe_id = res.data[res.data.length - 1].id;
-      history.push(`/recipes/view/${recipe_id}`);
+      history.push(`/recipes/${recipe_id}`);
     })
     .catch(err => {
       dispatch({ type: ADD_RECIPE_FAILURE, payload: err });

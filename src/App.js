@@ -1,9 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import "../src/css/App.css";
 import "../src/css/Register.css";
 import "../src/css/Login.css";
+
+import { BrowserRouter as Router } from "react-router-dom";
+
 import "../src/css/Recipes.css";
 
 import Register from "./components/login/Register.js";
@@ -21,10 +24,9 @@ function App() {
       </header>
 
       <Router>
-        <Link className="links" to={"/"}>
-          {" "}
+        <a href="https://cookbookproject.netlify.com" className="links">
           Home
-        </Link>
+        </a>
 
         <Link className="links" to={"/login"}>
           {" "}
@@ -38,12 +40,15 @@ function App() {
           {" "}
           Dashboard
         </Link>
-    
-        <PrivateRoute exact path="/" component={RecipeCardDisplay} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        <Link className="links" to={"/recipeform"}>
+          {" "}
+          Recipe From (temp link)
+        </Link>
+
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/recipeform" component={RecipeForm} />
+        <Route path="/recipeform" component={RecipeForm} />
       </Router>
     </div>
   );
