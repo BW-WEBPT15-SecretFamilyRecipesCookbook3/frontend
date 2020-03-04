@@ -88,7 +88,7 @@ class RecipeForm extends React.Component {
         <Form onSubmit={this.submitRecipe}>
           <h2>Create New Recipe</h2>
           <Row form>
-            <Col md={15}>
+            <Col md={9}>
               <FormGroup className="create-recipe">
                 {/* <Label 
               for="Create-New-Recipe"
@@ -132,7 +132,7 @@ class RecipeForm extends React.Component {
                 ))}
                 <div className="directions-wrapper">
                   <h3>Directions</h3>
-                  <input
+                  <Input
                     type="text"
                     name="directionValue"
                     onChange={this.handleChanges}
@@ -163,8 +163,9 @@ class RecipeForm extends React.Component {
               </FormGroup>
             </Col>
           </Row>
-
-          <Button type="submit"> Add Recipe</Button>
+          <div className="submit-recipe">
+            <button type="submit"> Add Recipe</button>
+          </div>
         </Form>
       </div>
     );
