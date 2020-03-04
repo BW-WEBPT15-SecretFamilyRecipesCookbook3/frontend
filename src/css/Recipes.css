@@ -11,22 +11,26 @@
   color: rgb(53, 26, 0);
 }
 
-.create-recipe {
-  margin-left: 45%;
-  margin-right: 13%;
+.recipe-name, .recipe-source {
+  margin: 3% auto;
   font-size: 2em;
   justify-content: center;  
 
 }
 
-.ingredients-wrapper {
-  font-size: 1.5em;
-  margin-left: 5%;
+.add-ingredients {
+  font-size: 2em;
+  margin: 10% 1% 10% 1%;
 }
   
 .directions-wrapper {
-  font-size: 1.53em;
-  margin-left: 5%;
+  font-size: 1.92em;
+  margin: 7% auto 7% 5%;
+}
+
+.description {
+  font-size: 2em;
+  margin: 1% auto 20% auto;
 }
 
 .tags {
@@ -41,11 +45,11 @@
   border-radius: 50%;
 }
 
-.ingredients-wrapper button, .directions-wrapper button {
+.add-ingredients button, .directions-wrapper button {
   margin: 1%;
-  font-size: .75em;
+  font-size: .5em;
   padding: 1%;
-  border-radius: 50%;
+  border-radius: 40%;
 }
 
 .add-note {

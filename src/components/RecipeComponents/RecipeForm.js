@@ -4,16 +4,10 @@ import { connect } from "react-redux";
 import { addRecipe } from "../../actions/addRecipeAction";
 import ShowArrayItem from "./ShowArrayItem";
 
-import {
-  Col,
-  Row,
-  // Button,
-  Form,
-  FormGroup,
-  Input,
-  Button
-  // FormText
-} from "reactstrap";
+// import {
+//   Form,
+//   Input
+// } from "reactstrap";
 
 class RecipeForm extends React.Component {
   state = {
@@ -85,17 +79,10 @@ class RecipeForm extends React.Component {
   render() {
     return (
       <div className="recipe-form">
-        <Form onSubmit={this.submitRecipe}>
+        <form onSubmit={this.submitRecipe}>
           <h2>Create New Recipe</h2>
-          <Row form>
-            <Col md={9}>
-              <FormGroup className="create-recipe">
-                {/* <Label 
-              for="Create-New-Recipe"
-              size="lg">Create New Recipe
-              </Label> */}
-
-                <Input
+        <div className="recipe-name">
+          <input
                   placeholder="Title"
                   type="text"
                   required
@@ -103,14 +90,19 @@ class RecipeForm extends React.Component {
                   onChange={this.handleChanges}
                   value={this.state.title}
                 />
-                <Input
+        </div>
+        <div className="recipe-source">
+                <input
                   placeholder="Source"
                   type="text"
                   name="source"
                   onChange={this.handleChanges}
                   value={this.state.source}
                 />
-                <Input
+        </div>
+
+              <div className="add-ingredients">
+                <input
                   placeholder="Ingredient"
                   type="text"
                   name="ingredientValue"
@@ -128,11 +120,12 @@ class RecipeForm extends React.Component {
                     <button onClick={e => this.deleteIngredient(e, index)}>
                       Delete Ingredient
                     </button>
-                  </div>
+                  </div>       
                 ))}
+               </div>       
                 <div className="directions-wrapper">
                   <h3>Directions</h3>
-                  <Input
+                  <input
                     type="text"
                     name="directionValue"
                     onChange={this.handleChanges}
@@ -153,20 +146,52 @@ class RecipeForm extends React.Component {
                     </div>
                   ))}
                 </div>
-                <Input
+            <div className="description">
+                <input
                   placeholder="Description"
                   type="text"
                   name="description"
                   onChange={this.handleChanges}
                   value={this.state.description}
                 />
-              </FormGroup>
-            </Col>
-          </Row>
+            </div>
+
+            {/* <div className="tags-wrapper">
+            <h3>Tags</h3>
+            <div className="tags">
+              {this.state.commonTags.map((tag, index) => {
+                return (
+                  <button
+                    key={index}
+                    onClick={e => this.addTagByButton(e, tag)}
+                  >
+                    {tag}
+                  </button>
+                );
+              })}
+              <input
+                type="text"
+                name="tag"
+                onChange={this.handleChanges}
+                value={this.state.tag}
+              />
+              <button onClick={this.addCustomTag}>Add Custom Tag</button>
+              {this.state.tags.map((tag, index) => (
+                <div className="tag">
+                  <p>{tag}</p>
+                  <button onClick={e => this.deleteTag(e, index)}>
+                    Delete Tag
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div> */}
+            
           <div className="submit-recipe">
             <button type="submit"> Add Recipe</button>
           </div>
-        </Form>
+        
+        </form>
       </div>
     );
   }
