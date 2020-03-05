@@ -4,16 +4,10 @@ import { connect } from "react-redux";
 import { addRecipe } from "../../actions/addRecipeAction";
 import ShowArrayItem from "./ShowArrayItem";
 
-import {
-  Col,
-  Row,
-  // Button,
-  Form,
-  FormGroup,
-  Input,
-  Button
-  // FormText
-} from "reactstrap";
+// import {
+//   Form,
+//   Input
+// } from "reactstrap";
 
 class RecipeForm extends React.Component {
   state = {
@@ -28,7 +22,23 @@ class RecipeForm extends React.Component {
     directions: [{
       step_number: 0,
       instructions: ""
-    }]
+    }],
+    tags: [],
+    tag: "",
+    commonTags: [
+      "Breakfast",
+      "Lunch",
+      "Dinner",
+      "Dessert",
+      "Side",
+      "Main",
+      "Appetizer",
+      "Vegetable",
+      "Chicken",
+      "Pork",
+      "Beef",
+      "Quick"
+    ]
   };
 
   handleChanges = e => {
@@ -104,17 +114,29 @@ class RecipeForm extends React.Component {
   render() {
     return (
       <div className="recipe-form">
-        <Form onSubmit={this.submitRecipe}>
+        <form onSubmit={this.submitRecipe}>
           <h2>Create New Recipe</h2>
-          <Row form>
-            <Col md={9}>
-              <FormGroup className="create-recipe">
-                {/* <Label 
-              for="Create-New-Recipe"
-              size="lg">Create New Recipe
-              </Label> */}
+          {/*<div className="recipe-name">
+            <input
+              placeholder="Title"
+              type="text"
+              required
+              name="title"
+              onChange={this.handleChanges}
+              value={this.state.title}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="Source"
+              type="text"
+              name="source"
+              onChange={this.handleChanges}
+              value={this.state.source}
+            />
+    </div> */}
 
-                <Input
+                <input
                   placeholder="Title"
                   type="text"
                   required
@@ -122,7 +144,7 @@ class RecipeForm extends React.Component {
                   onChange={this.handleChanges}
                   value={this.state.title}
                 />
-                <Input
+                <input
                   placeholder="Description"
                   type="text"
                   required
@@ -130,42 +152,42 @@ class RecipeForm extends React.Component {
                   onChange={this.handleChanges}
                   value={this.state.description}
                 />
-                <Input
+                <input
                   placeholder="Source"
                   type="text"
                   name="source"
                   onChange={this.handleChanges}
                   value={this.state.source}
                 />
-                <Input
+                <input
                   placeholder="Ingredient"
                   type="text"
                   name="ingredient"
                   onChange={this.handleChanges}
                   value={this.state.ingredients.ingredient}
                 />
-                <Input
+                <input
                   placeholder="Unit"
                   type="text"
                   name="unit"
                   onChange={this.handleChanges}
                   value={this.state.ingredients.unit}
                 />
-                <Input
+                <input
                   placeholder="Quantity"
                   type="text"
                   name="quantity"
                   onChange={this.handleChanges}
                   value={ this.state.ingredients.quantity }
                 />
-                <Input
+                <input
                   placeholder="Step Number"
                   type="text"
                   name="step_number"
                   onChange={this.handleChanges}
                   value={ this.state.directions.step_number }
                 />
-                <Input
+                <input
                   placeholder="instructions"
                   type="text"
                   name="instructions"
@@ -215,13 +237,12 @@ class RecipeForm extends React.Component {
                   onChange={this.handleChanges}
                   value={this.state.description}
                    /> */}
-              </FormGroup>
-            </Col>
-          </Row>
+              
+            
           <div className="submit-recipe">
             <button type="submit"> Add Recipe</button>
           </div>
-        </Form>
+        </form>
       </div>
     );
   }
