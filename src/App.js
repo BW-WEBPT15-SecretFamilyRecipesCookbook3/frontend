@@ -37,6 +37,10 @@ function App() {
           {" "}
           Dashboard
         </Link>
+        <Link className="links" to={"/recipeform"}>
+          {" "}
+          recipeform
+        </Link>
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />

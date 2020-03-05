@@ -144,6 +144,7 @@ class RecipeForm extends React.Component {
               onChange={this.handleChanges}
               value={this.state.ingredientValue}
             />
+            <br></br>
             <button onClick={this.addIngredient}>Add Ingredient</button>
             {this.state.ingredients.map((ingredient, index) => (
               <div className="ingredient">
@@ -165,9 +166,10 @@ class RecipeForm extends React.Component {
               name="directionValue"
               onChange={this.handleChanges}
               value={this.state.directionValue}
-              placeholder="Direction"
+              placeholder="Directions"
             />
-            <button onClick={this.addDirection}>Plus</button>
+            <br></br>
+            <button onClick={this.addDirection}>Add Directions</button>
             {this.state.directions.map((direction, index) => (
               <div className="direction">
                 <ShowArrayItem
@@ -188,7 +190,7 @@ class RecipeForm extends React.Component {
               name="description"
               onChange={this.handleChanges}
               value={this.state.description}
-            />
+            /> <br></br> <button type="add"> Add Description </button>
           </div>
 
           <div className="tags-wrapper">
@@ -204,15 +206,17 @@ class RecipeForm extends React.Component {
                   </button>
                 );
               })}
+              <br></br>
               <input
                 type="text"
                 name="tag"
+                placeholder="Add Tag"
                 onChange={this.handleChanges}
                 value={this.state.tag}
               />
+              <button type="add"> + </button>
             </div>
           </div>
-
           <div className="submit-recipe">
             <button type="submit"> Add Recipe</button>
           </div>
