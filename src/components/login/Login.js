@@ -62,7 +62,7 @@ class Login extends React.Component {
                         onChange={this.handleChanges}
                         value={this.input}
                       />
-                      <p>Password</p>
+                      <p>Password</p> 
                       <Input
                         type="password"
                         required
