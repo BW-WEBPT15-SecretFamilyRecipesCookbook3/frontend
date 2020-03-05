@@ -40,10 +40,10 @@ function App() {
           {" "}
           Dashboard
         </Link>
-        <Link className="links" to={"/recipeform"}>
+        {/* <Link className="links" to={"/recipeform"}>
           {" "}
           Recipe From (temp link)
-        </Link>
+        </Link> */}
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
