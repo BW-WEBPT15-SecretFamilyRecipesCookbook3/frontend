@@ -20,8 +20,15 @@ class RecipeForm extends React.Component {
     title: "",
     description: "",
     source: "",
-    ingredients: [],
-    directions: []
+    ingredients: [{
+      ingredient: "",
+      unit: "",
+      quantity: 0
+    }],
+    directions: [{
+      step_number: 0,
+      instructions: ""
+    }]
   };
 
   handleChanges = e => {
@@ -31,43 +38,46 @@ class RecipeForm extends React.Component {
       [e.target.name]: e.target.value
     });
   };
-  addIngredient = e => {
-    e.preventDefault();
-    this.setState(state => {
-      const ingredients = [...state.ingredients, state.ingredientValue];
-      return {
-        ingredients,
-        ingredientValue: ""
-      };
-    });
-  };
-  addDirection = e => {
-    e.preventDefault();
-    this.setState(state => {
-      const directions = [...state.directions, state.directionValue];
-      return {
-        directions,
-        directionValue: ""
-      };
-    });
-  };
+  // addIngredient = e => {
+  //   e.preventDefault();
+  //   this.setState(state => {
+  //     const ingredients = [...state.ingredients, state.ingredients.ingredient, state.ingredients.unit, state.ingredients.quantity];
+  //     return {
+  //       ingredients: {
+  //         ingredient: "",
+  //         unit: "",
+  //         quantity: 0
+  //       }
+  //     };
+  //   });
+  // };
+  // addDirection = e => {
+  //   e.preventDefault();
+  //   this.setState(state => {
+  //     const directions = [...state.directions, state.directionValue];
+  //     return {
+  //       directions,
+  //       directionValue: ""
+  //     };
+  //   });
+  // };
 
-  deleteIngredient = (e, index) => {
-    e.preventDefault();
-    const newIngredients = [...this.state.ingredients];
-    newIngredients.splice(index, 1);
-    this.setState({
-      ingredients: newIngredients
-    });
-  };
-  deleteDirection = (e, index) => {
-    e.preventDefault();
-    const newDirections = [...this.state.directions];
-    newDirections.splice(index, 1);
-    this.setState({
-      directions: newDirections
-    });
-  };
+  // deleteIngredient = (e, index) => {
+  //   e.preventDefault();
+  //   const newIngredients = [...this.state.ingredients];
+  //   newIngredients.splice(index, 1);
+  //   this.setState({
+  //     ingredients: newIngredients
+  //   });
+  // };
+  // deleteDirection = (e, index) => {
+  //   e.preventDefault();
+  //   const newDirections = [...this.state.directions];
+  //   newDirections.splice(index, 1);
+  //   this.setState({
+  //     directions: newDirections
+  //   });
+  // };
 
   submitRecipe = e => {
     e.preventDefault();
@@ -75,8 +85,17 @@ class RecipeForm extends React.Component {
       title: this.state.title,
       description: this.state.description,
       source: this.state.source,
-      ingredients: this.state.ingredients,
-      instructions: this.state.directions
+      ingredients: {
+        ingredient: this.state.ingredient,
+        unit: this.state.unit,
+        quantity: Number(this.state.quantity)
+      },
+      directions: {
+        step_number: Number(this.state.step_number),
+        instructions: this.state.instructions
+      }
+      
+      
     };
     console.log("submit recipe history", this.props.history);
     this.props.addRecipe(newRecipe, this.props.history);
@@ -104,6 +123,14 @@ class RecipeForm extends React.Component {
                   value={this.state.title}
                 />
                 <Input
+                  placeholder="Description"
+                  type="text"
+                  required
+                  name="description"
+                  onChange={this.handleChanges}
+                  value={this.state.description}
+                />
+                <Input
                   placeholder="Source"
                   type="text"
                   name="source"
@@ -113,53 +140,81 @@ class RecipeForm extends React.Component {
                 <Input
                   placeholder="Ingredient"
                   type="text"
-                  name="ingredientValue"
+                  name="ingredient"
                   onChange={this.handleChanges}
-                  value={this.state.ingredientValue}
+                  value={this.state.ingredients.ingredient}
                 />
-                <button onClick={this.addIngredient}>Add Ingredient</button>
-                {this.state.ingredients.map((ingredient, index) => (
-                  <div className="ingredient">
-                    <ShowArrayItem
-                      listNum={index + 1}
-                      item={ingredient}
-                      key={index}
-                    />
-                    <button onClick={e => this.deleteIngredient(e, index)}>
-                      Delete Ingredient
-                    </button>
-                  </div>
-                ))}
-                <div className="directions-wrapper">
-                  <h3>Directions</h3>
-                  <Input
-                    type="text"
-                    name="directionValue"
-                    onChange={this.handleChanges}
-                    value={this.state.directionValue}
-                    placeholder="Direction"
-                  />
-                  <button onClick={this.addDirection}>Plus</button>
-                  {this.state.directions.map((direction, index) => (
-                    <div className="direction">
-                      <ShowArrayItem
-                        listNum={index + 1}
-                        item={direction}
-                        key={index}
-                      />
-                      <button onClick={e => this.deleteDirection(e, index)}>
-                        Delete Direction
-                      </button>
-                    </div>
-                  ))}
-                </div>
+                <Input
+                  placeholder="Unit"
+                  type="text"
+                  name="unit"
+                  onChange={this.handleChanges}
+                  value={this.state.ingredients.unit}
+                />
+                <Input
+                  placeholder="Quantity"
+                  type="text"
+                  name="quantity"
+                  onChange={this.handleChanges}
+                  value={ this.state.ingredients.quantity }
+                />
+                <Input
+                  placeholder="Step Number"
+                  type="text"
+                  name="step_number"
+                  onChange={this.handleChanges}
+                  value={ this.state.directions.step_number }
+                />
+                <Input
+                  placeholder="instructions"
+                  type="text"
+                  name="instructions"
+                  onChange={this.handleChanges}
+                  value={this.state.directions.instructions}
+                />
+                {/* <button onClick={this.addIngredient}>Add Ingredient</button>
+                 {this.state.ingredients.map((ingredient, index) => (
+                   <div className="ingredient">
+                     <ShowArrayItem
+                       listNum={index + 1}
+                       item={ingredient}
+                       key={index}
+                     />
+                     <button onClick={e => this.deleteIngredient(e, index)}>
+                       Delete Ingredient
+                     </button>
+                   </div>
+                 ))}
+                 <div className="directions-wrapper">
+                   <h3>Directions</h3>
+                   <Input
+                     type="text"
+                     name="directionValue"
+                     onChange={this.handleChanges}
+                     value={this.state.directionValue}
+                     placeholder="Direction"
+                   />
+                   <button onClick={this.addDirection}>Plus</button>
+                   {this.state.directions.map((direction, index) => (
+                     <div className="direction">
+                       <ShowArrayItem
+                         listNum={index + 1}
+                         item={direction}
+                         key={index}
+                       />
+                       <button onClick={e => this.deleteDirection(e, index)}>
+                         Delete Direction
+                       </button>
+                     </div>
+                   ))}
+                 </div>
                 <Input
                   placeholder="Description"
                   type="text"
                   name="description"
                   onChange={this.handleChanges}
                   value={this.state.description}
-                />
+                   /> */}
               </FormGroup>
             </Col>
           </Row>

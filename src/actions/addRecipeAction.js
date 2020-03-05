@@ -11,6 +11,7 @@ export const addRecipe = (newRecipe, history) => dispatch => {
     .post("https://sfrecipes.herokuapp.com/api/recipes", newRecipe)
     .then(res => {
       dispatch({ type: ADD_RECIPE_SUCCESS, payload: res.data });
+      console.log(res.data);
       const recipe_id = res.data[res.data.length - 1].id;
       history.push(`/recipes/${recipe_id}`);
     })
