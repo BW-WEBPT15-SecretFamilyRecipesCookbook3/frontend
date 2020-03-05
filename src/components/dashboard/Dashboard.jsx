@@ -13,7 +13,9 @@ const Dashboard = () => {
         <div className="dash-aside">
           <Sidebar />
         </div>
-        <div className="dash-main"></div>
+        <div className="dash-main">
+        
+        </div>
       </div>
     </div>
   );

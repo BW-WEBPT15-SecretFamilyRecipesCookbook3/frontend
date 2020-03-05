@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   ProfileSide,
   SettingSide,
@@ -11,6 +12,9 @@ import Social from "./social";
 import "./navi.css";
 
 const Sidebar = () => {
+
+  
+
   return (
     <aside className="aside">
       <Social />
@@ -19,7 +23,9 @@ const Sidebar = () => {
       <FamilySide />
       <BakerySide />
       <FoodSide />
-      <AddSide />
+      <Link to={'/recipeform'}>
+        <AddSide />
+      </Link>
     </aside>
   );
 };
