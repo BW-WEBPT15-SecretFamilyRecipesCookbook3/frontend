@@ -33,13 +33,9 @@ function App() {
           {" "}
           Register
         </Link>
-        <Link className="links" to={"/dashboard"}>
+        <Link className="links" to={"/dashboard"}> 
           {" "}
           Dashboard
-        </Link>
-        <Link className="links" to={"/recipeform"}>
-          {" "}
-          recipeform
         </Link>
 
         <Route exact path="/login" component={Login} />
