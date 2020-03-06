@@ -75,7 +75,7 @@ class Login extends React.Component {
                   </Col>
                 </Row>
 
-                <button className="login-btn" type="submit">
+                <button className="login-btn" type="submit"> 
                   Log In
                 </button>
                 <p className="login-small-font">

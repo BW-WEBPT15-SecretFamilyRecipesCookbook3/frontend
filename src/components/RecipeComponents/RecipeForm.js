@@ -181,7 +181,7 @@ class RecipeForm extends React.Component {
               type="text"
               name="unit"
               onChange={this.handleChanges}
-              value={this.state.ingredients.unit}
+              value={this.state.ingredients.unit} 
             />
           </div>
           <div className="recipe-source">
