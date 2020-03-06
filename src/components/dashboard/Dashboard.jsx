@@ -17,7 +17,7 @@ const Dashboard = () => {
           <Sidebar />
         </div>
         <div className="dash-main">
-          <RecipeCardDisplay />
+        <RecipeCardDisplay />
         </div>
       </div>
     </div>

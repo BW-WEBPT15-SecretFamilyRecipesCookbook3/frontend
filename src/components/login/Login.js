@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { logIn } from "../../actions/logInAction";
 import { withRouter } from "react-router";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Col, Row, Form, FormGroup, Input } from "reactstrap";
 
 class Login extends React.Component {
   state = {
