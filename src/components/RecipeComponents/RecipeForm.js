@@ -99,15 +99,15 @@ class RecipeForm extends React.Component {
       title: this.state.title,
       description: this.state.description,
       source: this.state.source,
-      ingredients: {
+      ingredients: [{
         ingredient: this.state.ingredient,
         unit: this.state.unit,
         quantity: Number(this.state.quantity)
-      },
-      directions: {
+      }],
+      directions: [{
         step_number: Number(this.state.step_number),
         instructions: this.state.instructions
-      }
+      }]
     };
     console.log("submit recipe history", this.props.history);
     this.props.addRecipe(newRecipe, this.props.history);
@@ -172,7 +172,7 @@ class RecipeForm extends React.Component {
               type="text"
               name="ingredient"
               onChange={this.handleChanges}
-              value={this.state.ingredients.ingredient}
+              value={this.state.ingredients[1]}
             />
           </div>
           <div className="recipe-source">
@@ -181,7 +181,7 @@ class RecipeForm extends React.Component {
               type="text"
               name="unit"
               onChange={this.handleChanges}
-              value={this.state.ingredients.unit}
+              value={this.state.ingredients[2]}
             />
           </div>
           <div className="recipe-source">
@@ -190,7 +190,7 @@ class RecipeForm extends React.Component {
               type="text"
               name="quantity"
               onChange={this.handleChanges}
-              value={this.state.ingredients.quantity}
+              value={this.state.ingredients[3]}
             />
           </div>
           <div className="recipe-source">
@@ -199,7 +199,7 @@ class RecipeForm extends React.Component {
               type="text"
               name="step_number"
               onChange={this.handleChanges}
-              value={this.state.directions.step_number}
+              value={this.state.directions[1]}
             />
           </div>
           <div className="recipe-source">
@@ -208,7 +208,7 @@ class RecipeForm extends React.Component {
               type="text"
               name="instructions"
               onChange={this.handleChanges}
-              value={this.state.directions.instructions}
+              value={this.state.directions[2]}
             />
           </div>
           {/* <button onClick={this.addIngredient}>Add Ingredient</button>
