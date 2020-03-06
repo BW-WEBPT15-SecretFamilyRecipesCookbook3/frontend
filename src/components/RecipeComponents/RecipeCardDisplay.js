@@ -1,26 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { getTitles } from '../../actions/fetchTitleAction';
+import axiosWithAuth from "../utilis/AxiosWithAuth";
 
 function RecipeCardDisplay(props) {
 
   const [state, setState] = useState([]);
-  //this.props.getTitles(recipeID, this.props.history);
-  useEffect(() => {
-    
-  }) 
+  
+  const getRecipe = () => {
+    axiosWithAuth()
+        .get('/recipes')
+        .then(res => setState(res.data))
+          
+        .catch(err => console.error('axiosRecipe: ', err));
+  }
+  console.log(state)
 
-console.log(props);
-  return (
-    <>
-      <h1>Hello From Recipes</h1>
-    </>
-  );
+  useEffect(() => {
+    getRecipe();
+  },[]);
+
+
+return (
+  
+  <div>
+    <h1>Hello From Recipes</h1>
+    {state.map(item => {
+      return (
+        <div key={item.id}><h3>{item.title}</h3></div>
+      )})}
+    
+  </div>
+);
+  
 }
 
-const mapStateToProps = state => ({
-  fetchingRecipe: state.fetchingRecipe
-});
-
-export default withRouter(connect(mapStateToProps, { getTitles })(RecipeCardDisplay));
+export default RecipeCardDisplay;
