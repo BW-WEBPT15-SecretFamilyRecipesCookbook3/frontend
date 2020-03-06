@@ -33,9 +33,6 @@ function RecipeCardDisplay(props) {
 
 export default RecipeCardDisplay;
 
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
 // function RecipeCardDisplay (props) => {
 //   const [recipe, setRecipe] = useState("");
 //   useEffect(() => {
@@ -49,7 +46,3 @@ import axios from "axios";
 //   <h3>{props.recipe.title} </h3>
 //   );
 // }
-
-RecipeCardDisplay = props => {
-  return <h3>{props.recipe.title} </h3>;
-};
