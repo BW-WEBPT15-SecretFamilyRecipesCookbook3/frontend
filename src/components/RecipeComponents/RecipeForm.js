@@ -14,15 +14,19 @@ class RecipeForm extends React.Component {
     title: "",
     description: "",
     source: "",
-    ingredients: [{
-      ingredient: "",
-      unit: "",
-      quantity: 0
-    }],
-    directions: [{
-      step_number: 0,
-      instructions: ""
-    }],
+    ingredients: [
+      {
+        ingredient: "",
+        unit: "",
+        quantity: 0
+      }
+    ],
+    directions: [
+      {
+        step_number: 0,
+        instructions: ""
+      }
+    ],
     tags: [],
     tag: "",
     commonTags: [
@@ -104,8 +108,6 @@ class RecipeForm extends React.Component {
         step_number: Number(this.state.step_number),
         instructions: this.state.instructions
       }
-      
-      
     };
     console.log("submit recipe history", this.props.history);
     this.props.addRecipe(newRecipe, this.props.history);
@@ -135,66 +137,81 @@ class RecipeForm extends React.Component {
               value={this.state.source}
             />
     </div> */}
-
-                <input
-                  placeholder="Title"
-                  type="text"
-                  required
-                  name="title"
-                  onChange={this.handleChanges}
-                  value={this.state.title}
-                />
-                <input
-                  placeholder="Description"
-                  type="text"
-                  required
-                  name="description"
-                  onChange={this.handleChanges}
-                  value={this.state.description}
-                />
-                <input
-                  placeholder="Source"
-                  type="text"
-                  name="source"
-                  onChange={this.handleChanges}
-                  value={this.state.source}
-                />
-                <input
-                  placeholder="Ingredient"
-                  type="text"
-                  name="ingredient"
-                  onChange={this.handleChanges}
-                  value={this.state.ingredients.ingredient}
-                />
-                <input
-                  placeholder="Unit"
-                  type="text"
-                  name="unit"
-                  onChange={this.handleChanges}
-                  value={this.state.ingredients.unit}
-                />
-                <input
-                  placeholder="Quantity"
-                  type="text"
-                  name="quantity"
-                  onChange={this.handleChanges}
-                  value={ this.state.ingredients.quantity }
-                />
-                <input
-                  placeholder="Step Number"
-                  type="text"
-                  name="step_number"
-                  onChange={this.handleChanges}
-                  value={ this.state.directions.step_number }
-                />
-                <input
-                  placeholder="instructions"
-                  type="text"
-                  name="instructions"
-                  onChange={this.handleChanges}
-                  value={this.state.directions.instructions}
-                />
-                {/* <button onClick={this.addIngredient}>Add Ingredient</button>
+          <div className="recipe-name">
+            <input
+              placeholder="Title"
+              type="text"
+              required
+              name="title"
+              onChange={this.handleChanges}
+              value={this.state.title}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="Description"
+              type="text"
+              required
+              name="description"
+              onChange={this.handleChanges}
+              value={this.state.description}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="Source"
+              type="text"
+              name="source"
+              onChange={this.handleChanges}
+              value={this.state.source}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="Ingredient"
+              type="text"
+              name="ingredient"
+              onChange={this.handleChanges}
+              value={this.state.ingredients.ingredient}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="Unit"
+              type="text"
+              name="unit"
+              onChange={this.handleChanges}
+              value={this.state.ingredients.unit}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="Quantity"
+              type="text"
+              name="quantity"
+              onChange={this.handleChanges}
+              value={this.state.ingredients.quantity}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="Step Number"
+              type="text"
+              name="step_number"
+              onChange={this.handleChanges}
+              value={this.state.directions.step_number}
+            />
+          </div>
+          <div className="recipe-source">
+            <input
+              placeholder="instructions"
+              type="text"
+              name="instructions"
+              onChange={this.handleChanges}
+              value={this.state.directions.instructions}
+            />
+          </div>
+          {/* <button onClick={this.addIngredient}>Add Ingredient</button>
                  {this.state.ingredients.map((ingredient, index) => (
                    <div className="ingredient">
                      <ShowArrayItem
@@ -237,8 +254,7 @@ class RecipeForm extends React.Component {
                   onChange={this.handleChanges}
                   value={this.state.description}
                    /> */}
-              
-            
+
           <div className="submit-recipe">
             <button type="submit"> Add Recipe</button>
           </div>
