@@ -32,8 +32,9 @@ function RecipeCardDisplay(props) {
       {state.map(item => {
         return (
           <Card key={item.id}>
-            <CardTitle>{item.title}</CardTitle>
-            <CardSubtitle>{item.description}</CardSubtitle>
+            <CardTitle>Name: {item.title}</CardTitle>
+            <CardSubtitle>Description: {item.description}</CardSubtitle>
+            <CardSubtitle>Source: {item.source}</CardSubtitle>
           </Card>
         );
       })}
