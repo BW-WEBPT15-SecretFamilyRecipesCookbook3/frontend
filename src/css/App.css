@@ -8,6 +8,11 @@
   pointer-events: none;
 }
 
+h1,
+h3 {
+  color: white;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -34,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -47,7 +53,8 @@
   border: 1px solid rgb(53, 26, 0);
   border-radius: 10% 40%;
 }
-.links:hover{
+
+.links:hover {
   background-color: rgb(53, 26, 0);
   color: #c46003;
   border-color: white;

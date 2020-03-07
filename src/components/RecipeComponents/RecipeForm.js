@@ -98,15 +98,19 @@ class RecipeForm extends React.Component {
       title: this.state.title,
       description: this.state.description,
       source: this.state.source,
-      ingredients: [{
-        ingredient: this.state.ingredient,
-        unit: this.state.unit,
-        quantity: Number(this.state.quantity)
-      }],
-      directions: [{
-        step_number: Number(this.state.step_number),
-        instructions: this.state.instructions
-      }]
+      ingredients: [
+        {
+          ingredient: this.state.ingredient,
+          unit: this.state.unit,
+          quantity: Number(this.state.quantity)
+        }
+      ],
+      directions: [
+        {
+          step_number: Number(this.state.step_number),
+          instructions: this.state.instructions
+        }
+      ]
     };
     console.log("submit recipe history", this.props.history);
     this.props.addRecipe(newRecipe, this.props.history);
