@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axiosWithAuth from "../utilis/AxiosWithAuth";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button
+} from "reactstrap";
 
 function RecipeCardDisplay(props) {
   const [state, setState] = useState([]);
@@ -22,9 +31,10 @@ function RecipeCardDisplay(props) {
       <h1>Recipes</h1>
       {state.map(item => {
         return (
-          <div key={item.id}>
-            <h3>{item.title}</h3>
-          </div>
+          <Card key={item.id}>
+            <CardTitle>{item.title}</CardTitle>
+            <CardSubtitle>{item.description}</CardSubtitle>
+          </Card>
         );
       })}
     </div>

@@ -8,9 +8,16 @@
   pointer-events: none;
 }
 
-h1,
-h3 {
+h1 {
   color: white;
+}
+
+.card {
+  margin: 20px;
+}
+
+.card-title {
+  color: black;
 }
 
 @media (prefers-reduced-motion: no-preference) {
