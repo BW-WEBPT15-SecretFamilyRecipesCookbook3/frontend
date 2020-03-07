@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosWithAuth from "../utilis/AxiosWithAuth";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
-} from "reactstrap";
+import { Card, CardTitle, CardSubtitle, Button } from "reactstrap";
 
 function RecipeCardDisplay(props) {
   const [state, setState] = useState([]);
@@ -35,6 +27,7 @@ function RecipeCardDisplay(props) {
             <CardTitle>Name: {item.title}</CardTitle>
             <CardSubtitle>Description: {item.description}</CardSubtitle>
             <CardSubtitle>Source: {item.source}</CardSubtitle>
+            <Button color="danger">Delete</Button>
           </Card>
         );
       })}

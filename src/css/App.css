@@ -8,20 +8,6 @@
   pointer-events: none;
 }
 
-h1 {
-  color: white;
-}
-
-.card {
-  margin: 20px;
-
-}
-
-.card-title {
-  color: black;
-  background-color: wheat;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -48,7 +34,6 @@ h1 {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }

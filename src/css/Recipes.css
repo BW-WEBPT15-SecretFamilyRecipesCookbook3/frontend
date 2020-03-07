@@ -1,21 +1,21 @@
-
 .recipe-form {
   background-color: rgb(53, 26, 0);
   color: #c46003;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-content: center;
-} 
+}
 
 .recipe-form button {
   background-color: #c46003;
   color: rgb(53, 26, 0);
 }
 
-.recipe-name, .recipe-source {
+.recipe-name,
+.recipe-source {
   margin: 3% auto;
   font-size: 2em;
-  justify-content: center;  
+  justify-content: center;
 
 }
 
@@ -23,7 +23,7 @@
   font-size: 2em;
   margin: 10% 1% 10% 1%;
 }
-  
+
 .directions-wrapper {
   font-size: 2em;
   margin: 7% auto 7% auto;
@@ -37,7 +37,7 @@
 .description button {
   margin: auto;
   padding: .5%;
-  border-radius: 40%; 
+  border-radius: 40%;
   font-size: .55em;
 }
 
@@ -47,7 +47,7 @@
   margin: .5% 25% .5% 25%;
 }
 
-.tags input{
+.tags input {
   margin: 5% .2% 5% .2%;
   font-size: 1.2em;
 }
@@ -58,7 +58,8 @@
   border-radius: 40%;
 }
 
-.add-ingredients button, .directions-wrapper button {
+.add-ingredients button,
+.directions-wrapper button {
   margin: 1%;
   font-size: .5em;
   padding: 1%;
@@ -66,11 +67,31 @@
 }
 
 .submit-recipe {
-  font-size: 2em; 
+  font-size: 2em;
   border-radius: 30%;
 }
 
 .submit-recipe button {
   border-radius: 15%;
   margin: 2% 2% 10% 2%;
+}
+
+h1 {
+  color: white;
+}
+
+.card {
+  margin: 20px;
+
+}
+
+.card-title {
+  color: black;
+  background-color: wheat;
+}
+
+.btn {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }

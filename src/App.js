@@ -33,7 +33,7 @@ function App() {
           {" "}
           Register
         </Link>
-        <Link className="links" to={"/dashboard"}> 
+        <Link className="links" to={"/dashboard"}>
           {" "}
           Dashboard
         </Link>
