@@ -19,7 +19,7 @@ function RecipeCardDisplay(props) {
 
   return (
     <div>
-      <h1>Hello From Recipes</h1>
+      <h1>Recipes</h1>
       {state.map(item => {
         return (
           <div key={item.id}>
