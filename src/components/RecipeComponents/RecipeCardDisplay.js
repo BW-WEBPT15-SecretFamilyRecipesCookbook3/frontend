@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axiosWithAuth from "../utilis/AxiosWithAuth";
 
+
+
 function RecipeCardDisplay(props) {
 
   const [state, setState] = useState([]);
@@ -25,7 +27,7 @@ return (
     <h1>Hello From Recipes</h1>
     {state.map(item => {
       return (
-        <div key={item.id}><h3>{item.title}</h3></div>
+        <div key={item.id}><h2>{item.title}</h2></div>
       )})}
     
   </div>
