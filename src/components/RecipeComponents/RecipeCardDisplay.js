@@ -17,9 +17,16 @@ function RecipeCardDisplay(props) {
     axiosWithAuth()
       .get("/recipes")
       .then(res => setState(res.data))
-
-      .catch(err => console.error("axiosRecipe: ", err));
+      .catch(err => console.error("axiosGet: ", err));
   };
+
+  const handleDelete = (id) => {
+    axiosWithAuth()
+      .delete(`recipes/${id}`)
+      .then(res => getRecipe())
+      .catch(err => console.error("axiosDelete: ", err));
+  };
+
   console.log(state);
 
   useEffect(() => {
@@ -30,14 +37,18 @@ function RecipeCardDisplay(props) {
     <div>
       <h1>Recipes</h1>
       {state.map(item => {
+        const { id, title, description, source } = item
         return (
-          <Card key={item.id}>
-            <CardTitle>Name: {item.title}</CardTitle>
-            <CardSubtitle>Description: {item.description}</CardSubtitle>
-            <CardSubtitle>Source: {item.source}</CardSubtitle>
+          <Card key={id}>
+            <CardTitle>Name: {title}</CardTitle>
+            <CardSubtitle>Description: {description}</CardSubtitle>
+            <CardSubtitle>Source: {source}</CardSubtitle>
+            <p onClick={() => handleDelete(id)}>Delete</p>
           </Card>
+          
         );
-      })}
+      } )}
+      
     </div>
   );
 }
