@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosWithAuth from "../utilis/AxiosWithAuth";
+import RecipeCard from './recipeCard.component';
 
 
 
@@ -24,9 +25,7 @@ function RecipeCardDisplay(props) {
       <h1>Recipes</h1>
       {state.map(item => {
         return (
-          <div key={item.id}>
-            <h3>{item.title}</h3>
-          </div>
+          <RecipeCard key={item.id} recipe={item} />
         );
       })}
     </div>
