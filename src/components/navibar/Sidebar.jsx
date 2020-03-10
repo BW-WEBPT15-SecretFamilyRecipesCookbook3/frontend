@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Social from './social';
 import {
   ProfileSide,
   SettingSide,
@@ -16,6 +17,7 @@ const Sidebar = () => {
 
   return (
     <aside className="aside">
+      <Social />
       <ProfileSide />
       <SettingSide />
       <FamilySide />
